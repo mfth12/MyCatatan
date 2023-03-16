@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "./input";
+import InputCatatan from "./input";
 
 const FormInput = ({ updateNotes }) => {
   const [title, setTitle] = useState("");
@@ -18,28 +18,12 @@ const FormInput = ({ updateNotes }) => {
   return (
     <form className='form' onSubmit={createNote}>
       <h2 className='heading'>&#128221; Catatan Baru</h2>
-      <small className='small'>
-        Batasan karakter: <span className='counter'>{50 - title.length}</span>
-      </small>
-      <Input
-        value={title}
-        onChange={setTitle}
-        type='text'
-        placeholder='Judul'
-        id='title'
-        name='title'
-        required
-      />
-      <Input
-        value={note}
-        onChange={setNote}
-        type='textarea'
-        placeholder='Tulis catatan Anda di sini'
-        id='note'
-        name='note'
-        required
-      />
-      <Input type='submit' id='submit_form' name='submit_form' value='Create' />
+      <small className='small'> Batasan karakter: <span className='counter'>{50 - title.length}</span> </small>
+      <InputCatatan value={title} onChange={setTitle}
+        type='text' placeholder='Judul' id='title' name='title' required />
+      <InputCatatan value={note} onChange={setNote}
+        type='textarea' placeholder='Tulis catatan Anda di sini' id='note' name='note' required />
+      <InputCatatan name='submit_form' type='submit' id='submit_form' value='Buat Catatan' />
     </form>
   );
 };

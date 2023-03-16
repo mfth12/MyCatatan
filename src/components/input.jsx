@@ -1,8 +1,10 @@
-const InputCatatan = (attributes) => {
+const Input = (attributes) => {
   const changeHandler = (event) => {
     if (attributes.name === "title") {
       const currentText = event.target.value;
-      attributes.onChange((oldText) => (currentText.length <= 50 ? currentText : oldText));
+      attributes.onChange((oldText) =>
+        currentText.length <= 50 ? currentText : oldText
+      );
     } else {
       attributes.onChange(event.target.value);
     }
@@ -13,7 +15,7 @@ const InputCatatan = (attributes) => {
       {attributes.type === "textarea" ? (
         <textarea
           {...attributes}
-          className={`input textarea`}
+          className={"input textarea"}
           value={attributes.value}
           spellCheck={false}
           onChange={changeHandler}
@@ -21,7 +23,7 @@ const InputCatatan = (attributes) => {
       ) : (
         <input
           {...attributes}
-          className='input'
+          className={"input"}
           spellCheck={false}
           value={attributes.value}
           onChange={changeHandler}
@@ -31,4 +33,4 @@ const InputCatatan = (attributes) => {
   );
 };
 
-export default InputCatatan;
+export default Input;

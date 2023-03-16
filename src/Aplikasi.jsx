@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { FormInput, Header, SectionNotes } from "./components";
-// import style from "./styles/index.css";
-import { getInitialData } from "./utils";
+import { getInitialData } from "./utils/data";
+
+import FormInput from "./components/form-input";
+import Header from "./components/header";
+import SectionNotes from "./components/section-notes";
 
 function Aplikasi() {
   const [query, setQuery] = useState("");

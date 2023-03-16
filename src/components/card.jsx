@@ -1,4 +1,4 @@
-import { showFormattedDate } from "../utils";
+import { showFormattedDate } from "../utils/data";
 import Button from "./button";
 
 const Card = ({ id, title, createdAt, body, archived, action }) => {
