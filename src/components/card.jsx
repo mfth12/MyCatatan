@@ -23,10 +23,7 @@ const Card = ({ id, title, createdAt, body, archived, action }) => {
       </header>
       <footer className='card_footer'>
         <Button eventHandler={() => deleteNote(id)} label='delete' />
-        <Button
-          eventHandler={() => toggleArchive(id)}
-          label={archived ? "unarchived" : "archive"}
-        />
+        <Button eventHandler={() => toggleArchive(id)} label={archived ? "unarchived" : "archive"} />
       </footer>
     </article>
   );

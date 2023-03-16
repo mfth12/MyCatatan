@@ -20,8 +20,8 @@ function Aplikasi() {
       <Header search={query} updateQuery={setQuery} updateNotes={setNotes} />
       <main className='main'>
         <FormInput updateNotes={setNotes} />
-        <SectionNotes label='Catatan Aktif' notes={activeNotes} setNotes={setNotes} />
-        <SectionNotes label='Catatan Terarsip' notes={archivedNotes} setNotes={setNotes} />
+        <SectionNotes label='&#127894; Catatan Aktif' notes={activeNotes} setNotes={setNotes} />
+        <SectionNotes label='&#128194; Arsip' notes={archivedNotes} setNotes={setNotes} />
       </main>
     </>
   );

@@ -17,15 +17,15 @@ const FormInput = ({ updateNotes }) => {
 
   return (
     <form className='form' onSubmit={createNote}>
-      <h2 className='heading'>Create a note</h2>
+      <h2 className='heading'>&#128221; Catatan Baru</h2>
       <small className='small'>
-        Remaining characters: <span className='counter'>{50 - title.length}</span>
+        Batasan karakter: <span className='counter'>{50 - title.length}</span>
       </small>
       <Input
         value={title}
         onChange={setTitle}
         type='text'
-        placeholder='Title'
+        placeholder='Judul'
         id='title'
         name='title'
         required
@@ -34,7 +34,7 @@ const FormInput = ({ updateNotes }) => {
         value={note}
         onChange={setNote}
         type='textarea'
-        placeholder='Write your note'
+        placeholder='Tulis catatan Anda di sini'
         id='note'
         name='note'
         required

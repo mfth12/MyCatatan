@@ -5,7 +5,7 @@ const SectionNotes = ({ label, notes, setNotes }) => {
     <section>
       <h2 className='heading'>{label}</h2>
       {notes.length === 0 ? (
-        <p className='empty_note'>Tidak ada catatan.</p>
+        <h5 className='empty_note'>Tidak ada catatan.</h5>
       ) : (
         <div className='list_of_notes'>
           {notes?.map((note) => (
