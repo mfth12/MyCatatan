@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Input from "./input";
-import style from "../styles/form-input.module.css";
 
 const FormInput = ({ updateNotes }) => {
   const [title, setTitle] = useState("");
@@ -17,10 +16,10 @@ const FormInput = ({ updateNotes }) => {
   };
 
   return (
-    <form className={style.form} onSubmit={createNote}>
-      <h2 className={style.heading}>Create a note</h2>
-      <small className={style.small}>
-        Remaining characters: <span className={style.counter}>{50 - title.length}</span>
+    <form className='form' onSubmit={createNote}>
+      <h2 className='heading'>Create a note</h2>
+      <small className='small'>
+        Remaining characters: <span className='counter'>{50 - title.length}</span>
       </small>
       <Input
         value={title}

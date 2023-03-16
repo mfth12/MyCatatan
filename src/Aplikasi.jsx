@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { FormInput, Header, SectionNotes } from "./components";
-import style from "./styles/app.module.css";
+// import style from "./styles/index.css";
 import { getInitialData } from "./utils";
 
-function App() {
+function Aplikasi() {
   const [query, setQuery] = useState("");
   const [searchNotes, setSearchNotes] = useState([]);
   const [notes, setNotes] = useState(getInitialData());
@@ -18,13 +18,13 @@ function App() {
   return (
     <>
       <Header search={query} updateQuery={setQuery} updateNotes={setNotes} />
-      <main className={style.main}>
+      <main className='main'>
         <FormInput updateNotes={setNotes} />
-        <SectionNotes label='Active Notes' notes={activeNotes} setNotes={setNotes} />
-        <SectionNotes label='Archived Notes' notes={archivedNotes} setNotes={setNotes} />
+        <SectionNotes label='Catatan Aktif' notes={activeNotes} setNotes={setNotes} />
+        <SectionNotes label='Catatan Terarsip' notes={archivedNotes} setNotes={setNotes} />
       </main>
     </>
   );
 }
 
-export default App;
+export default Aplikasi;

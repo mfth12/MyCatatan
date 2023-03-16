@@ -1,6 +1,4 @@
-import style from "../styles/input.module.css";
-
-const Input = (attributes) => {
+const InputCatatan = (attributes) => {
   const changeHandler = (event) => {
     if (attributes.name === "title") {
       const currentText = event.target.value;
@@ -15,7 +13,7 @@ const Input = (attributes) => {
       {attributes.type === "textarea" ? (
         <textarea
           {...attributes}
-          className={`${style.input} ${style.textarea}`}
+          className={`input textarea`}
           value={attributes.value}
           spellCheck={false}
           onChange={changeHandler}
@@ -23,7 +21,7 @@ const Input = (attributes) => {
       ) : (
         <input
           {...attributes}
-          className={style.input}
+          className='input'
           spellCheck={false}
           value={attributes.value}
           onChange={changeHandler}
@@ -33,4 +31,4 @@ const Input = (attributes) => {
   );
 };
 
-export default Input;
+export default InputCatatan;

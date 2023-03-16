@@ -1,4 +1,3 @@
-import style from "../styles/card.module.css";
 import { showFormattedDate } from "../utils";
 import Button from "./button";
 
@@ -16,13 +15,13 @@ const Card = ({ id, title, createdAt, body, archived, action }) => {
   };
 
   return (
-    <article id={id} className={style.card}>
-      <header className={style.card_header}>
-        <h3 className={style.heading}>{title}</h3>
-        <small className={style.date}>{showFormattedDate(createdAt)}</small>
-        <p className={style.note}>{body}</p>
+    <article id={id} className='card'>
+      <header className='card_header'>
+        <h3 className='heading-card'>{title}</h3>
+        <small className='date'>{showFormattedDate(createdAt)}</small>
+        <p className='note'>{body}</p>
       </header>
-      <footer className={style.card_footer}>
+      <footer className='card_footer'>
         <Button eventHandler={() => deleteNote(id)} label='delete' />
         <Button
           eventHandler={() => toggleArchive(id)}
