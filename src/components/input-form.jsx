@@ -5,18 +5,17 @@ const InputForm = ({ updateCatatans }) => {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
 
-  const createNote = (event) => {
+  const buatCatatan = (event) => {
     event.preventDefault();
-    const timestamp = new Date().toISOString();
-
+    const waktu = new Date().toISOString();
     updateCatatans((catatan) => [
       ...catatan,
-      { id: timestamp, title, body: note, archived: false, createdAt: timestamp },
+      { id: waktu, title, body: note, archived: false, createdAt: waktu },
     ]);
   };
 
   return (
-    <form className='form' onSubmit={createNote}>
+    <form className='form' onSubmit={buatCatatan}>
       <h2 className='heading'>&#128221; Catatan Baru</h2>
       <small className='small'> Batasan karakter: <span className='counter'>{50 - title.length}</span> </small>
       <InputCatatan value={title} onChange={setTitle}

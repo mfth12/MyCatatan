@@ -7,22 +7,22 @@ import BagianCatatan from "./components/bagian";
 
 function Aplikasi() {
   const [query, setQuery] = useState("");
-  const [searchNotes, setSearchNotes] = useState([]);
-  const [catatans, setNotes] = useState(ambilDataCatatan());
-  const activeNotes = (searchNotes || catatans).filter((note) => !note.archived);
-  const archivedNotes = (searchNotes || catatans).filter((note) => note.archived);
+  const [cariCatatans, setCari] = useState([]);
+  const [catatans, setCatatans] = useState(ambilDataCatatan());
+  const activeNotes = (cariCatatans || catatans).filter((note) => !note.archived);
+  const archivedNotes = (cariCatatans || catatans).filter((note) => note.archived);
 
   useEffect(() => {
-    setSearchNotes(catatans.filter((note) => note.title.toLowerCase().includes(query.toLowerCase())));
+    setCari(catatans.filter((note) => note.title.toLowerCase().includes(query.toLowerCase())));
   }, [query, catatans]);
 
   return (
     <>
-      <Header search={query} updateQuery={setQuery} updateNotes={setNotes} />
+      <Header cari={query} updateQuery={setQuery} updateNotes={setCatatans} />
       <main className='main'>
-        <InputForm updateCatatans={setNotes} />
-        <BagianCatatan label='&#127894; Catatan Aktif' catatans={activeNotes} setNotes={setNotes} />
-        <BagianCatatan label='&#128194; Arsip' catatans={archivedNotes} setNotes={setNotes} />
+        <InputForm updateCatatans={setCatatans} />
+        <BagianCatatan label='&#127894; Catatan Aktif' catatans={activeNotes} setCatatans={setCatatans} />
+        <BagianCatatan label='&#128194; Arsip' catatans={archivedNotes} setCatatans={setCatatans} />
       </main>
     </>
   );

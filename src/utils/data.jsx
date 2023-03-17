@@ -43,6 +43,7 @@ const ambilDataCatatan = () => [
   },
 ];
 
+//melakukan convert ke tanggal terformat
 const tampilTanggalTerformat = (date) => {
   const options = {
     weekday: "long",
@@ -50,6 +51,7 @@ const tampilTanggalTerformat = (date) => {
     month: "long",
     day: "numeric",
   };
+  //menggunakan opsi lokasilisasi indonesia
   return new Date(date).toLocaleDateString("id-ID", options);
 };
 

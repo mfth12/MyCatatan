@@ -1,6 +1,6 @@
 import Card from "./card";
 
-const Bagian = ({ label, catatans, setNotes }) => {
+const Bagian = ({ label, catatans, setCatatans }) => {
   return (
     <section>
       <h2 className="heading">{label}</h2>
@@ -9,7 +9,7 @@ const Bagian = ({ label, catatans, setNotes }) => {
       ) : (
         <div className="list_of_notes">
           {catatans?.map((note) => (
-            <Card key={note.id} action={setNotes} {...note} />
+            <Card key={note.id} action={setCatatans} {...note} />
           ))}
         </div>
       )}
