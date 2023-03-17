@@ -1,5 +1,6 @@
 import Input from "./input";
 
+//header tampilan UI
 const Header = ({ cari, updateQuery }) => {
   return (
     <header className='container'>

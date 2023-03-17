@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ambilDataCatatan } from "./utils/data";
 
+//import input-form, header, dan bagian-catatan
 import InputForm from "./components/input-form";
 import Header from "./components/header";
 import BagianCatatan from "./components/bagian";
@@ -11,11 +12,12 @@ function Aplikasi() {
   const [catatans, setCatatans] = useState(ambilDataCatatan());
   const catatanAktif = (cariCatatans || catatans).filter((note) => !note.archived);
   const catatanArsip = (cariCatatans || catatans).filter((note) => note.archived);
-
+  //filter pencarian catatan
   useEffect(() => {
     setCari(catatans.filter((note) => note.title.toLowerCase().includes(query.toLowerCase())));
   }, [query, catatans]);
 
+  //mengembalikan UI aplikasi
   return (
     <>
       <Header cari={query} updateQuery={setQuery} updateNotes={setCatatans} />

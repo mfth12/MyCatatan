@@ -10,12 +10,6 @@ body {
   color: var(--primary);
 }
 
-:root {
-  --primary: #ffffffdf;
-  --light: #f2f2f2;
-  --dark: #202124;
-}
-
 .main {
   padding: 0 12rem;
   padding-bottom: 8rem;
@@ -23,6 +17,12 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 3.5rem;
+}
+
+:root {
+  --primary: #ffffffdf;
+  --light: #f2f2f2;
+  --dark: #202124;
 }
 
 .input {
