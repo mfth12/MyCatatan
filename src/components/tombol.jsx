@@ -1,4 +1,4 @@
-const Button = ({ label, eventHandler }) => {
+const Tombol = ({ label, eventHandler }) => {
   return (
     <button className='button' type='button' onClick={eventHandler} data-action={label}>
       {label}
@@ -6,4 +6,4 @@ const Button = ({ label, eventHandler }) => {
   );
 };
 
-export default Button;
+export default Tombol;

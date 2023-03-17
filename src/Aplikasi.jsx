@@ -1,29 +1,28 @@
 import { useState, useEffect } from "react";
-import { getInitialData } from "./utils/data";
+import { ambilDataCatatan } from "./utils/data";
 
-import FormInput from "./components/form-input";
+import InputForm from "./components/input-form";
 import Header from "./components/header";
-import SectionNotes from "./components/section-notes";
+import BagianCatatan from "./components/bagian";
 
 function Aplikasi() {
   const [query, setQuery] = useState("");
   const [searchNotes, setSearchNotes] = useState([]);
-  const [notes, setNotes] = useState(getInitialData());
-
-  const activeNotes = (searchNotes || notes).filter((note) => !note.archived);
-  const archivedNotes = (searchNotes || notes).filter((note) => note.archived);
+  const [catatans, setNotes] = useState(ambilDataCatatan());
+  const activeNotes = (searchNotes || catatans).filter((note) => !note.archived);
+  const archivedNotes = (searchNotes || catatans).filter((note) => note.archived);
 
   useEffect(() => {
-    setSearchNotes(notes.filter((note) => note.title.toLowerCase().includes(query.toLowerCase())));
-  }, [query, notes]);
+    setSearchNotes(catatans.filter((note) => note.title.toLowerCase().includes(query.toLowerCase())));
+  }, [query, catatans]);
 
   return (
     <>
       <Header search={query} updateQuery={setQuery} updateNotes={setNotes} />
       <main className='main'>
-        <FormInput updateNotes={setNotes} />
-        <SectionNotes label='&#127894; Catatan Aktif' notes={activeNotes} setNotes={setNotes} />
-        <SectionNotes label='&#128194; Arsip' notes={archivedNotes} setNotes={setNotes} />
+        <InputForm updateCatatans={setNotes} />
+        <BagianCatatan label='&#127894; Catatan Aktif' catatans={activeNotes} setNotes={setNotes} />
+        <BagianCatatan label='&#128194; Arsip' catatans={archivedNotes} setNotes={setNotes} />
       </main>
     </>
   );

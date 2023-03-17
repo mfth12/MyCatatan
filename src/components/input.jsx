@@ -1,31 +1,31 @@
-const Input = (attributes) => {
+const Input = (atribut) => {
   const changeHandler = (event) => {
-    if (attributes.name === "title") {
+    if (atribut.name === "title") {
       const currentText = event.target.value;
-      attributes.onChange((oldText) =>
+      atribut.onChange((oldText) =>
         currentText.length <= 50 ? currentText : oldText
       );
     } else {
-      attributes.onChange(event.target.value);
+      atribut.onChange(event.target.value);
     }
   };
 
   return (
     <>
-      {attributes.type === "textarea" ? (
+      {atribut.type === "textarea" ? (
         <textarea
-          {...attributes}
+          {...atribut}
           className={"input textarea"}
-          value={attributes.value}
+          value={atribut.value}
           spellCheck={false}
           onChange={changeHandler}
         />
       ) : (
         <input
-          {...attributes}
+          {...atribut}
           className={"input"}
           spellCheck={false}
-          value={attributes.value}
+          value={atribut.value}
           onChange={changeHandler}
         />
       )}

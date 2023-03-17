@@ -1,9 +1,9 @@
-import { showFormattedDate } from "../utils/data";
-import Button from "./button";
+import { tampilTanggalTerformat } from "../utils/data";
+import Tombol from "./tombol";
 
 const Card = ({ id, title, createdAt, body, archived, action }) => {
-  const deleteNote = (item) => action((notes) => notes.filter((note) => note.id !== item));
-  const toggleArchive = (item) => {
+  const deleteCatatan = (item) => action((notes) => notes.filter((note) => note.id !== item));
+  const toggleArsip = (item) => {
     action((notes) =>
       notes.map((note) => {
         if (note.id === item) {
@@ -18,12 +18,12 @@ const Card = ({ id, title, createdAt, body, archived, action }) => {
     <article id={id} className='card'>
       <header className='card_header'>
         <h3 className='heading-card'>{title}</h3>
-        <small className='date'>{showFormattedDate(createdAt)}</small>
+        <small className='date'>{tampilTanggalTerformat(createdAt)}</small>
         <p className='note'>{body}</p>
       </header>
       <footer className='card_footer'>
-        <Button eventHandler={() => deleteNote(id)} label='delete' />
-        <Button eventHandler={() => toggleArchive(id)} label={archived ? "unarchived" : "archive"} />
+        <Tombol eventHandler={() => deleteCatatan(id)} label='hapus' />
+        <Tombol eventHandler={() => toggleArsip(id)} label={archived ? "aktifkan" : "arsip"} />
       </footer>
     </article>
   );

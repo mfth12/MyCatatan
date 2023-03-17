@@ -1,5 +1,5 @@
 {
-  "name": "aplikasi-catatan-pribadi",
+  "name": "my-catatan-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,8 +10,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

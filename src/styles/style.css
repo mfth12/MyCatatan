@@ -190,24 +190,30 @@ body {
   color: var(--dark);
 }
 
-.button[data-action="delete"] {
+.button[data-action="hapus"] {
   color: #ff5f52;
 }
 
-.button[data-action="archive"],
-.button[data-action="unarchived"] {
+.button[data-action="arsip"] {
   color: #fff263;
 }
+.button[data-action="aktifkan"] {
+  color: #46e94f;
+}
 
-.button[data-action="delete"]:hover {
+.button[data-action="hapus"]:hover {
   color: var(--dark);
   background-color: #ff5f52;
 }
 
-.button[data-action="archive"]:hover,
-.button[data-action="unarchived"]:hover {
+.button[data-action="arsip"]:hover {
   color: var(--dark);
   background-color: #fff263;
+}
+
+.button[data-action="aktifkan"]:hover {
+  color: var(--dark);
+  background-color: #46e94f;
 }
 
 @media only screen and (min-width: 500px) {

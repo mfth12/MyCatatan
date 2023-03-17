@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InputCatatan from "./input";
 
-const FormInput = ({ updateNotes }) => {
+const InputForm = ({ updateCatatans }) => {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
 
@@ -9,8 +9,8 @@ const FormInput = ({ updateNotes }) => {
     event.preventDefault();
     const timestamp = new Date().toISOString();
 
-    updateNotes((notes) => [
-      ...notes,
+    updateCatatans((catatan) => [
+      ...catatan,
       { id: timestamp, title, body: note, archived: false, createdAt: timestamp },
     ]);
   };
@@ -28,4 +28,4 @@ const FormInput = ({ updateNotes }) => {
   );
 };
 
-export default FormInput;
+export default InputForm;
